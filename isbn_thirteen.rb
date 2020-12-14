@@ -11,3 +11,28 @@
 # 86 mod 10 = 6
 # 10 – 6 = 4
 # Therefore the complete ISBN is: 9780143007234
+
+class IsbnThirteen
+  # Should have the first 12 digits
+  ISBN_PATTERN = /^\d{11}[\dX]$/.freeze
+  
+  def calculate_last_digit(isbn)
+    # Cleanse all dashes
+    isbn = isbn.gsub('-', '')
+
+    # return false unless valid_digits?(isbn)
+
+    # total = 0
+
+    # isbn.chars.each.with_index do |digit, index|
+    #   digit = 10 if digit == 'X'
+    #   total += digit.to_i * (index + 1)
+    # end
+    # (total % 11).zero?
+  end
+
+  def valid_digits?(isbn)
+    isbn =~ ISBN_PATTERN
+  end
+
+end
