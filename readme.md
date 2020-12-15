@@ -1,7 +1,8 @@
 # ISBN13 Barcode Verifier
 
 [![Build Status](https://travis-ci.com/roaldjap/isbn_verifier.svg?branch=master)](https://travis-ci.com/github/roaldjap/isbn_verifier)
-\A ISBN13 Verifier made in Ruby. The following project uses the following:
+
+A ISBN13 Verifier made in Ruby. The following project uses the following:
 
   - *Minitest* - for Unit Testing 
   - Integrated Test with *TravisCI*
