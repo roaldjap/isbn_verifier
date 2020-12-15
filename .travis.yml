@@ -1,6 +1,5 @@
 language: ruby
 rvm:
  - 2.6
- - jruby
 install:
   - bundle install --path vendor/bundle
