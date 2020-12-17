@@ -17,7 +17,7 @@ class IsbnThirteen
     @str = str
   end
 
-  def valid?
+  def call
     # print entry number
     puts "\n----------------------------\n"
     puts "Input: #{@str}"
@@ -58,9 +58,7 @@ class IsbnThirteen
 
   # Force convert all of the group of characters to integers 
   def num_list
-    sanitized_str.chars.map do |c|
-      c.to_i
-    end
+    sanitized_str.chars.map(&:to_i)
   end
 
   
@@ -68,14 +66,12 @@ class IsbnThirteen
     # multiply by 1 or 3
     # then get the sum of all multiplied numbers
     total = 0
-    num_list.each_with_index do |num, index|
-      index += 1
 
-      if index.odd?
-        total += (num * 1)
-      else
-        total += (num * 3)
-      end
+    num_list.each_with_index do |num, index|
+      
+      index += 1 # offset index initial number to 1 instead of 0
+      total += index.odd? ? (num * 1) : (num * 3)
+
     end
 
     return total
@@ -103,8 +99,8 @@ class IsbnThirteen
 
 end
 
-module IsbnThirteenVerify
-  def self.valid?(str)
-    IsbnThirteen.new(str).valid?
+module IsbnThirteenCalculate
+  def self.call(str)
+    IsbnThirteen.new(str).call
   end
 end
